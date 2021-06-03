@@ -10,7 +10,7 @@ import {
   debounce,
   lRoute,
   LocalizedLink,
-  ApiClientContext,
+  AuthContext,
   SiteAlert,
   setSiteAlertMessage,
 } from "@bloom-housing/ui-components"
@@ -24,7 +24,7 @@ import { GridOptions, ColumnApi, ColumnState } from "ag-grid-community"
 const ApplicationsList = () => {
   const COLUMN_STATE_KEY = "column-state"
 
-  const { applicationsService } = useContext(ApiClientContext)
+  const { applicationsService } = useContext(AuthContext)
 
   const router = useRouter()
   // eslint-disable-next-line @typescript-eslint/unbound-method

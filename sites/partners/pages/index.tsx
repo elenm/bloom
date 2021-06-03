@@ -1,6 +1,6 @@
 import React, { useMemo, useContext } from "react"
 import Head from "next/head"
-import { PageHeader, t, lRoute, UserContext } from "@bloom-housing/ui-components"
+import { PageHeader, t, lRoute, AuthContext } from "@bloom-housing/ui-components"
 import { useListingsData } from "../lib/hooks"
 import Layout from "../layouts/application"
 import { MetaTags } from "../src/MetaTags"
@@ -11,7 +11,7 @@ import { AgGridReact } from "ag-grid-react"
 import { GridOptions } from "ag-grid-community"
 
 export default function ListingsList() {
-  const { profile } = useContext(UserContext)
+  const { profile } = useContext(AuthContext)
   const leasingAgentInListings = profile.leasingAgentInListings?.map((item) => item.id)
   class formatLinkCell {
     link: HTMLAnchorElement
